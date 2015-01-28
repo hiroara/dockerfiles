@@ -4,7 +4,7 @@ set -e
 
 HOMESICK_NAME=$(basename $HOMESICK_REPO .git)
 
-if [ ! -d $HOME/.ssh ]; then
+if [ -d /ssh ] && [ ! -d $HOME/.ssh ]; then
   mkdir $HOME/.ssh
   cp /ssh/* $HOME/.ssh/
   chmod 600 $HOME/.ssh/*

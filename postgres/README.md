@@ -1,6 +1,6 @@
-# dockerfiles/postgres
+# hiroara/postgres repo
 
-# Get started
+## Get started
 
     $ docker run -it --name db hiroara/postgres
 
@@ -14,7 +14,7 @@ and
 
     app_development=>
 
-# Importing existing data
+## Importing existing data
 
 And, you can import existing dump data from PostgreSQL.
 
