@@ -1,0 +1,1 @@
+solr-4.7.2/Dockerfile
