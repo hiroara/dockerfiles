@@ -1,1 +1,1 @@
-ruby-2.1.5/Dockerfile
+ruby-2.2.0/Dockerfile
