@@ -11,5 +11,6 @@ ENV PATH=$PATH:/root/miniconda3/bin
 
 RUN conda install -y pip
 RUN conda run pip install chainer
+RUN conda install -y scipy pillow
 
 ENTRYPOINT ["python"]
