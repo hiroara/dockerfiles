@@ -10,7 +10,7 @@ RUN wget -q https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.s
 ENV PATH=$PATH:/root/miniconda3/bin
 
 RUN conda install -y pip
-RUN conda run pip install chainer
+RUN conda run pip install chainer==1.3.0
 RUN conda install -y scipy pillow scikit-learn
 
 ENTRYPOINT ["python"]
