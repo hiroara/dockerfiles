@@ -4,7 +4,6 @@ MAINTAINER Hiroki Arai <hiroara62@gmail.com>
 
 ARG JUMANPP_VERSION=2.0.0-rc2
 ARG JUMAN_VERSION=7.01
-ARG KNP_VERSION=4.19
 
 RUN apt-get update && apt-get install -y wget tar xz-utils bzip2 cmake build-essential zlib1g-dev language-pack-ja-base language-pack-ja && \
 
@@ -15,10 +14,6 @@ RUN apt-get update && apt-get install -y wget tar xz-utils bzip2 cmake build-ess
 
     if ! [ -f juman-${JUMAN_VERSION}.tar.bz2 ]; then \
       wget http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/juman/juman-${JUMAN_VERSION}.tar.bz2; \
-    fi && \
-
-    if ! [ -f knp-${KNP_VERSION}.tar.bz2 ]; then \
-      wget http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/knp/knp-${KNP_VERSION}.tar.bz2; \
     fi && \
 
     tar xvf jumanpp-${JUMANPP_VERSION}.tar.xz && \
@@ -34,12 +29,6 @@ RUN apt-get update && apt-get install -y wget tar xz-utils bzip2 cmake build-ess
     ./configure --prefix=/usr/local && \
     make && make install && \
 
-    cd /usr/local/src && \
-    tar xvf knp-${KNP_VERSION}.tar.bz2 && \
-    cd knp-${KNP_VERSION} && \
-    ./configure --prefix=/usr/local --with-juman-prefix=/usr/local && \
-    make && make install && \
-
     ldconfig && \
-    rm -r /usr/local/src/juman-* && rm -r /usr/local/src/jumanpp-* && rm -r /usr/local/src/knp-* && \
+    rm -r /usr/local/src/juman-* && rm -r /usr/local/src/jumanpp-* && \
     rm -rf /var/lib/apt/lists/*
