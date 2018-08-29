@@ -4,7 +4,7 @@ MAINTAINER Hiroki Arai <hiroara62@gmail.com>
 
 ARG JUMAN_VERSION=7.01
 
-RUN apt-get update && apt-get install -y wget tar xz-utils bzip2 cmake build-essential zlib1g-dev language-pack-ja-base language-pack-ja && \
+RUN apt-get update && apt-get install -y wget tar bzip2 cmake build-essential zlib1g-dev language-pack-ja && \
 
     cd /usr/local/src && \
     wget http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/juman/juman-${JUMAN_VERSION}.tar.bz2 && \
